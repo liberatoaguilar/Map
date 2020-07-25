@@ -1,0 +1,1093 @@
+<html>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <style>
+    img {
+      width: auto;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #eaeaea;
+    }
+    #menu {
+      text-align: left;
+      background-color: white;
+      width: 15vw;
+      height: 100vh;
+      position: absolute;
+      border-right: 1px solid #d4d4d4;
+    }
+    table {
+      text-align: center;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      width: 100%;
+      color: #818ea3;
+    }
+    tr:hover {
+      background-color: #eaeaea;
+    }
+    td, th {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 20px;
+    }
+    th {
+      font-size: 30px;
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+    th:hover {
+      background-color: white;
+    }
+    #space {
+      padding-top: 100px;
+      padding-bottom: auto;
+    }
+    #space:hover {
+      background-color: white;
+    }
+    #copyright {
+      font-size: 12px;
+      position: absolute;
+      top: 93vh;
+      width: 100%;
+      text-align: center;
+      color: #818ea3;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      margin: 0;
+      padding: 0;
+    }
+    #background {
+      position: absolute;
+    }
+    #unit {
+      display: flex;
+      position: absolute;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      font-size: 25px;
+      justify-content: center;
+      align-items: center;
+      /* border: 0.25px solid #818ea3; */
+      color: #d4d4d4;
+    }
+    #player {
+      display: flex;
+      position: absolute;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      font-size: 25px;
+      justify-content: center;
+      align-items: center;
+      /* border: 0.25px solid #818ea3; */
+      color: #818ea3;
+    }
+    #shiny {
+      display: flex;
+      position: absolute;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      font-size: 25px;
+      justify-content: center;
+      align-items: center;
+      /* border: 0.25px solid #818ea3; */
+      color: #a10000;
+    }
+    #zero {
+      display: flex;
+      position: absolute;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      font-size: 25px;
+      justify-content: center;
+      align-items: center;
+      /* border: 0.25px solid #818ea3; */
+      color: #dfdfdf;
+    }
+    #exportTextSelector {
+      position: absolute;
+      resize: none;
+      text-align: center;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      color: #818ea3;
+      outline: none;
+      -webkit-border-radius: 5;  -moz-border-radius: 5;  border-radius: 5px;
+    }
+    #binder {
+      display: flex;
+      position: absolute;
+      top: 20vh;
+      left: 50vw;
+      justify-content: center;
+      /* align-items: center; */
+    }
+    #listbinder {
+      display: flex;
+      position: absolute;
+      top: 20vh;
+      /* left: 50vw; */
+      justify-content: center;
+      -webkit-border-radius: 5;  -moz-border-radius: 5;  border-radius: 5px;
+      border: 1px solid #818ea3;
+    }
+    #donebutton {
+      position: relative;
+      top: 400;
+      background-color: #818ea3;
+      color: white;
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      text-decoration: none;
+      font-size: 27px;
+      padding: 10px;
+      -webkit-border-radius: 20;  -moz-border-radius: 20;  border-radius: 20px;
+      border: 2px solid #818ea3;
+    }
+    #donebutton:hover {
+      border: 2px solid #dfdfdf;
+    }
+    #placebg {
+      position: absolute;
+    }
+    #mazebg {
+      position: absolute;
+    }
+    ul {
+      font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+      color: #818ea3;
+      list-style-position: outside;
+      margin-left: 0;
+      padding-left: 0;
+      list-style-type: none;
+    }
+    li {
+      margin: 10px;
+    }
+    nav ul {
+      height:90%;
+      width:150%;
+    }
+    nav ul {
+      overflow:hidden;
+      overflow-y:scroll;
+    }
+    nav ul::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <body>
+    <div id="menu">
+      <table>
+        <tr>
+          <th>Menu</th>
+        </tr>
+        <tr>
+          <td id="stats">Trips</td>
+        </tr>
+        <tr>
+          <td id="bag">Bag</td>
+        </tr>
+        <tr>
+          <td id="export">Export</td>
+        </tr>
+        <tr>
+          <td id="upload">Upload</td>
+        </tr>
+        <tr>
+          <td id="creator">Create</td>
+        </tr>
+        <tr>
+          <td id="workout">Workout</td>
+        </tr>
+        <tr>
+          <td id="space"></td>
+        </tr>
+        <tr>
+          <td id="shuffle">Shuffle</td>
+        </tr>
+        <tr>
+          <td id="save">Save</td>
+        </tr>
+        <tr>
+          <td id="clearSave">Clear Save</td>
+        </tr>
+        <tr>
+          <td id="space"></td>
+        </tr>
+      </table>
+      <p id=copyright>Copyright Liberato Aguilar 2020</p>
+    </div>
+    <div id="background"></div>
+  </body>
+  <script>
+    let menu = document.getElementById("menu");
+    let background = document.getElementById("background");
+    let MAP = localStorage.getItem("map") || `M000000000000000000000000000000000X00000000
+X000000000000000000000000000000000X00000000
+X000000000000000000000000000000000X00000000
+X000000000000000000000000000000000X00000000
+XXXXX00000000000000000000000000000X00000000
+X000XX0000000000000000000000000000X00000000
+MXX00XXX00000000000000000000000000X00000000
+M0XX000XXXXXXXXXXXXXMXXXXXXXXXXXMXX00000000
+X00XX00X0000000000000000X000X00000X00000000
+X000XXXX0000000000000000X00XXXXXXXX00000000
+M000000X000000XXXXMXXXXXX000000000X00000000
+XXXXXX0X0000000000X0X0X0X00XXXXXXXX00000000
+X0X00XXX0000000000X0H0X0X00X000000X00000000
+X000000XX000000000X0X0X0X0XXXXXXXXX00000000
+XX000XX0XXXXXXXXXXXXXXXXXXX0000000X00000000
+X00000X00X000000000000000000000000X00000000
+X0XX0XXXXXX00000000000000000000000X00000000
+X0XX0X0000000000000000000000000000X00000000
+XXXXXXX000000000000000000000000000X00000000
+X0XX000000000000000000000000000000X00000000
+X000000000000000000000000000000000X00000000
+X00000000XXMXXXXXXX000000000000000X00000000
+X0000000XX00000000XXM0000000000000X00000000
+XXXXXXXXM00000000000XXXX0000000000X00000000
+X0000000000000000000000XX0000XXXXXXXXXXXXXX
+X00000000000000000000000XXXXXM0000000000000`;
+    let playerCoords = [0,0];
+    let creator = document.getElementById("creator");
+    let exporter = document.getElementById("export");
+    let uploader = document.getElementById("upload");
+    let shuffle = document.getElementById("shuffle");
+    let save = document.getElementById("save");
+    let clearSave = document.getElementById("clearSave");
+    let bag = document.getElementById("bag");
+    let stats = document.getElementById("stats");
+    let currentlyCreating = false;
+    let currentlyUploading = false;
+    let currentlyExporting = false;
+    let prevTextContent = "";
+    let hasHome = false;
+    let testHomeMap =  `OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOEOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO`;
+    let testMissionMap = `E000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+0000000000000000000000
+00000000000000000000M0
+0000000000C00000000000`;
+    let inPlace = false;
+    let prevCoords = [0,0];
+    let prevPlaceCoords = [0,0];
+    let recentplace = "";
+    let visited = JSON.parse(localStorage.getItem("visited")) || [];
+    let bagInv = {stick:1,walljumper:10};
+    let menuDisabled = false;
+    let miles = 0;
+    let trip = JSON.parse(localStorage.getItem("trip")) || [];
+    let immobile = false;
+
+    clearSave.addEventListener("click", () => {
+      localStorage.clear();
+      clearSave.textContent = "Cleared!";
+      setTimeout(() => {clearSave.textContent = "Clear Save";},2000);
+    });
+
+    function testEvent() {
+      let blinked = 0;
+      let dino = `000000000
+      000000000
+      000000000
+      00XX00000
+      XXXXX0000
+      0XXXX0000
+      000XXX000
+      0XXXXX0X0
+      000XXXXX0
+      000X0X000`
+
+      function enemy(sprite,newBackground) {
+        let shiny = Math.floor(Math.random() * 10000) < 5 ? true : false;
+        let divx = 0;
+        let divy = 0;
+        for (let line of sprite.split("\n")){
+          for (let x = 0;x < 22-line.length;x++){
+            let div = newBackground.querySelectorAll("[name-x='"+divx.toString()+"'][name-y='"+divy.toString()+"']")[0];
+            div.textContent = " ";
+            divx++;
+          }
+          for (let char of line){
+            let div = newBackground.querySelectorAll("[name-x='"+divx.toString()+"'][name-y='"+divy.toString()+"']")[0];
+            div.textContent = char;
+            if (!shiny) div.setAttribute("id","player");
+            else div.setAttribute("id","shiny");
+            divx++;
+          }
+          divy++;
+          divx = 0;
+        }
+      }
+
+      function blink(newBackground) {
+        let alldivs = newBackground.querySelectorAll("[name-x]");
+        for (let div of alldivs) {
+          div.textContent = "0";
+        }
+        setTimeout(() => {
+          for (let div of alldivs) {
+            div.textContent = " ";
+          }
+          if (blinked < 3) setTimeout(()=>{blink(newBackground);},200);
+          else {
+            drawPlayer(3,10);
+            enemy(dino.replace(/0/g," "),newBackground);
+          }
+          blinked++;
+        },200);
+      }
+
+      if (prevTextContent == "0" && Math.random() < 0.138888889 && !currentlyCreating) {
+        let maze = document.getElementById("mazebg");
+        let oldbg = document.getElementById("placebg");
+        if (!inPlace) prevCoords[0] = playerCoords[0];
+        else prevPlaceCoords[0] = playerCoords[0];
+        if (!inPlace) prevCoords[1] = playerCoords[1];
+        else prevPlaceCoords[1] = playerCoords[1];
+        if (!inPlace) document.body.removeChild(background);
+        else {
+          document.body.removeChild(maze);
+          document.body.removeChild(oldbg);
+        }
+
+        immobile = true;
+        menuDisabled = true;
+        inPlace = true;
+        let map = "                      \n".repeat(13);
+        map = map.slice(0,map.length-1);
+
+        let newBackground = document.createElement("div");
+        newBackground.setAttribute("id","placebg");
+        newBackground.style.backgroundColor = document.body.style.backgroundColor;
+        newBackground.style.border = "1px solid #818ea3";
+        newBackground.style.width = (Number(background.style.width.slice(0,background.style.width.length-2)) * 0.5).toString()+"px";
+        newBackground.style.height = (Number(background.style.height.slice(0,background.style.height.length-2)) * 0.5).toString()+"px";;
+        newBackground.style.left += menu.clientWidth + (Number(newBackground.style.width.slice(0,newBackground.style.width.length-2)) /2);
+        newBackground.style.top = document.body.clientHeight/2 - (Number(newBackground.style.height.slice(0,newBackground.style.height.length-2)) /2);
+        document.body.appendChild(newBackground);
+        createUnits(map,newBackground);
+        blink(newBackground);
+        blinked = 0;
+
+        let testdiv = newBackground.querySelectorAll("[name-X='3'][name-Y='10']")[0];
+        testdiv.addEventListener("click",()=>{leave("0",maze,oldbg);});
+      }
+    }
+
+    function testChest(posDiv) {
+      if (posDiv.textContent == "C" && posDiv.getAttribute("id") == "zero") {
+          let rand1 = Math.floor(Math.random() * 3);
+          let rand2 = Math.floor(Math.random() * 7);
+          bagInv.walljumper += rand1;
+          bagInv.stick += rand2;
+      }
+    }
+
+    function viewStats() {
+      menuDisabled = true;
+      if (!currentlyCreating && !currentlyExporting && !currentlyUploading) {
+        let binder = document.createElement("div");
+        binder.setAttribute("id","listbinder");
+        binder.style.backgroundColor = "white";
+        binder.style.width = "400px";
+        binder.style.height = "500px";
+        binder.style.left += document.body.clientWidth/2 - (Number(binder.style.width.slice(0,binder.style.width.length-2)) /3);
+        binder.style.top = document.body.clientHeight/2 - (Number(binder.style.height.slice(0,binder.style.height.length-2)) /1.5);
+
+        let scrollable = document.createElement("nav");
+        let triplist = document.createElement("ul");
+        let count = 1;
+        for (let item of trip) {
+          let listItem = document.createElement("li");
+          listItem.appendChild(document.createTextNode("Trip "+count.toString()+" : "+item+" mi."));
+          triplist.appendChild(listItem);
+          count++;
+        }
+        let doneButton = document.createElement("button");
+        doneButton.appendChild(document.createTextNode("Done"));
+        doneButton.setAttribute("id","donebutton");
+        doneButton.style.position = "absolute";
+        doneButton.style.marginTop = 150;
+        doneButton.addEventListener("click", () => {
+          menuDisabled = false;
+          document.body.removeChild(binder);
+        });
+
+        scrollable.appendChild(triplist);
+        binder.appendChild(scrollable);
+        binder.appendChild(doneButton);
+        document.body.appendChild(binder);
+
+      } else menuDisabled = false;
+    }
+    stats.addEventListener("click",viewStats);
+
+    function viewBag() {
+      menuDisabled = true;
+      if (!currentlyCreating && !currentlyExporting && !currentlyUploading) {
+        let binder = document.createElement("div");
+        binder.setAttribute("id","listbinder");
+        binder.style.backgroundColor = "white";
+        binder.style.width = "400px";
+        binder.style.height = "500px";
+        binder.style.left += document.body.clientWidth/2 - (Number(binder.style.width.slice(0,binder.style.width.length-2)) /3);
+        binder.style.top = document.body.clientHeight/2 - (Number(binder.style.height.slice(0,binder.style.height.length-2)) /1.5);
+
+        let scrollable = document.createElement("nav");
+        let list = document.createElement("ul");
+        for (let item of Object.keys(bagInv)) {
+          let listItem = document.createElement("li");
+          listItem.appendChild(document.createTextNode(item.toString()+" : "+bagInv[item].toString()));
+          list.appendChild(listItem);
+        }
+
+        let doneButton = document.createElement("button");
+        doneButton.appendChild(document.createTextNode("Done"));
+        doneButton.setAttribute("id","donebutton");
+        doneButton.style.position = "absolute";
+        doneButton.style.marginTop = 150;
+        doneButton.addEventListener("click", () => {
+          menuDisabled = false;
+          document.body.removeChild(binder);
+        });
+
+        scrollable.appendChild(list);
+        binder.appendChild(scrollable);
+        binder.appendChild(doneButton);
+        document.body.appendChild(binder);
+      } else menuDisabled = false;
+    }
+    bag.addEventListener("click",viewBag);
+
+    function leave(letter,mazebg=null,oldbg=null) {
+      console.log(playerCoords[0],playerCoords[1]);
+      immobile = false;
+      if (mazebg == null){
+        let newBackground = document.getElementById("placebg");
+        let mazeBackground = document.getElementById("mazebg");
+        document.body.removeChild(newBackground);
+        if (letter == "M") document.body.removeChild(mazeBackground);
+        document.body.appendChild(background);
+        inPlace = false;
+        currentlyCreating = false;
+        currentlyExporting = false;
+        currentlyUploading = false;
+        drawPlayer(prevCoords[0],prevCoords[1]);
+        if (visited.length > 1) {
+          for (let coords of visited) {
+            let divs = document.querySelectorAll("[name-X='"+coords[0].toString()+"'][name-Y='"+coords[1].toString()+"']")[0];
+            divs.setAttribute("id","player");
+          }
+        }
+        prevTextContent = letter;
+      } else {
+        let newBackground = document.getElementById("placebg");
+        document.body.removeChild(newBackground);
+        document.body.appendChild(mazebg);
+        document.body.appendChild(oldbg);
+        inPlace = true;
+        currentlyCreating = false;
+        currentlyExporting = false;
+        currentlyUploading = false;
+        drawPlayer(prevPlaceCoords[0],prevPlaceCoords[1]);
+        prevTextContent = "0";
+      }
+    }
+
+    function maze(SIZEX,SIZEY,FILL,bg1,bg2) {
+
+      let old = [];
+      immobile = true;
+
+      function checkIn(bg,x,y,addition="") {
+        return bg.querySelectorAll("[name-X"+addition+"='"+x.toString()+"'][name-Y"+addition+"='"+y.toString()+"']")[0];
+      }
+
+      function neighborCounter(bg,x,y,additon="") {
+        let neighborAliveCount = 0;
+        try {
+          if (checkIn(bg,x+1,y-1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x+1,y,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x+1,y+1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x,y-1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x,y+1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x-1,y-1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x-1,y,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        try {
+          if (checkIn(bg,x-1,y+1,additon).textContent == "N") neighborAliveCount++;
+        } catch (e) {}
+        return neighborAliveCount;
+      }
+
+      function placeWalls(bg1) {
+        let alldivs = bg1.querySelectorAll("[name-X]");
+        for (let div of alldivs) {
+          if (div.textContent == "N") div.remove();
+        }
+      }
+
+      function replaceGrid(bg1,bg2,newgrid) {
+        if (JSON.stringify(newgrid) != JSON.stringify(old)) {
+          old = newgrid;
+          // setTimeout(() => {updateState(bg1,bg2);},500+time);
+          updateState(bg1,bg2);
+        } else {
+          setTimeout( () => {
+            checkIn(bg1,0,0).textContent = "@";
+            checkIn(bg1,0,0).setAttribute("id","player");
+            checkIn(bg1,0,1).textContent = "0";
+            checkIn(bg1,0,1).setAttribute("id","zero");
+            checkIn(bg1,1,0).textContent = "0";
+            checkIn(bg1,1,0).setAttribute("id","zero");
+            checkIn(bg1,1,1).textContent = "0";
+            checkIn(bg1,1,1).setAttribute("id","zero");
+
+            checkIn(bg2,0,0,"-back").textContent = " ";
+            checkIn(bg2,0,0,"-back").setAttribute("id","player");
+            checkIn(bg2,0,1,"-back").textContent = "0";
+            checkIn(bg2,0,1,"-back").setAttribute("id","zero");
+            checkIn(bg2,1,0,"-back").textContent = "0";
+            checkIn(bg2,1,0,"-back").setAttribute("id","zero");
+            checkIn(bg2,1,1,"-back").textContent = "0";
+            checkIn(bg2,1,1,"-back").setAttribute("id","zero");
+
+            placeWalls(bg1);
+            let cdiv1 = bg1.querySelectorAll("[name-X]");
+            let cdiv2 = bg2.querySelectorAll("[name-X-back]");
+            cdiv1 = [...cdiv1].filter(n => n.textContent == "0");
+            cdiv2 = [...cdiv2].filter(n => n.textContent == "0");
+            let randNum = Math.floor(Math.random() * cdiv2.length);
+            cdiv1 = cdiv1[randNum];
+            cdiv2 = cdiv2[randNum];
+            cdiv1.textContent = "C";
+            cdiv2.textContent = "C";
+
+            immobile = false;
+
+          },200);
+        }
+      }
+
+      function updateState(bg1,bg2) {
+        let newgrid = [];
+        if(/M/.test(exportMap(true))) {
+          for (let y = 0; y < 25*FILL/4; y++){
+            let randomX = Math.floor(Math.random()*SIZEX);///4)+Math.floor(SIZEX/3);
+            let randomY = Math.floor(Math.random()*SIZEY);///4)+Math.floor(SIZEY/3);
+            if (checkIn(bg1,randomX,randomY).textContent != "@") {
+              checkIn(bg1,randomX,randomY).textContent = "N";
+              checkIn(bg2,randomX,randomY,"-back").textContent = "N";
+            }
+            checkIn(bg1,randomX,randomY).setAttribute("id","player");
+            checkIn(bg2,randomX,randomY,"-back").setAttribute("id","player");
+          }
+          setTimeout(() => {updateState(bg1,bg2);},100);
+        }
+        for (let y = 0; y < SIZEY; y++) {
+          for (let x = 0; x < SIZEX; x++) {
+            if (checkIn(bg1,x,y).textContent != "N"){
+              if ((neighborCounter(bg1,x,y) == 1 && checkIn(bg1,x,y).textContent == "N") || (neighborCounter(bg1,x,y) == 2 && checkIn(bg1,x,y).textContent == "N")
+                   || (neighborCounter(bg1,x,y) == 3 && checkIn(bg1,x,y).textContent == "N") || (neighborCounter(bg1,x,y) == 4 && checkIn(bg1,x,y).textContent == "N")){
+                checkIn(bg1,x,y).textContent = "N";
+                checkIn(bg2,x,y,"-back").textContent = "N";
+                checkIn(bg1,x,y).setAttribute("id","player");
+                checkIn(bg2,x,y,"-back").setAttribute("id","player");
+                newgrid.push("N");
+              } else {
+                if (neighborCounter(bg1,x,y) == 3) {
+                  checkIn(bg1,x,y).textContent = "N";
+                  checkIn(bg2,x,y,"-back").textContent = "N";
+                  checkIn(bg1,x,y).setAttribute("id","player");
+                  checkIn(bg2,x,y,"-back").setAttribute("id","player");
+                  newgrid.push("N");
+                }
+              }
+            } else {
+              if (neighborCounter(bg1,x,y) > 4 || neighborCounter(bg1,x,y) < 1) {
+                checkIn(bg1,x,y).textContent = "0";
+                checkIn(bg1,x,y).setAttribute("id","zero");
+                checkIn(bg2,x,y,"-back").textContent = "0";
+                checkIn(bg2,x,y,"-back").setAttribute("id","zero");
+                newgrid.push("0");
+              } else {
+                checkIn(bg1,x,y).textContent = "N";
+                checkIn(bg2,x,y,"-back").textContent = "N";
+                checkIn(bg1,x,y).setAttribute("id","player");
+                checkIn(bg2,x,y,"-back").setAttribute("id","player");
+                newgrid.push("N");
+              }
+            }
+          }
+        }
+        setTimeout(() => {replaceGrid(bg1,bg2,newgrid);},5);
+      }
+      updateState(bg1,bg2);
+
+    }
+
+    function enter(map,where) {
+      recentplace = where;
+      if (where == "M") {
+        map = map.replace("C","0");
+        let random = Math.floor(Math.random() * map.length+1);
+        map = map.substr(0,random)+"C"+map.substr(random+1);
+      } else if (where == "H") {
+        trip.push(miles.toFixed(2));
+        console.log(trip);
+        miles = 0;
+      }
+      prevCoords[0] = playerCoords[0];
+      prevCoords[1] = playerCoords[1];
+      inPlace = true;
+      document.body.removeChild(background);
+      let newBackground = document.createElement("div");
+      newBackground.setAttribute("id","placebg");
+      newBackground.style.backgroundColor = document.body.style.backgroundColor;
+      newBackground.style.width = (Number(background.style.width.slice(0,background.style.width.length-2)) * 0.5).toString()+"px";
+      newBackground.style.height = (Number(background.style.height.slice(0,background.style.height.length-2)) * 0.5).toString()+"px";;
+      newBackground.style.left += menu.clientWidth + (Number(newBackground.style.width.slice(0,newBackground.style.width.length-2)) /2);
+      newBackground.style.top = document.body.clientHeight/2 - (Number(newBackground.style.height.slice(0,newBackground.style.height.length-2)) /2);
+      let mazeBackground = newBackground.cloneNode();
+      mazeBackground.setAttribute("id","mazebg");
+      if (where == "M") document.body.appendChild(mazeBackground);
+      document.body.appendChild(newBackground);
+      if (where == "M") createUnits(map.replace("E"," "),mazeBackground,"-back");
+      createUnits(map,newBackground);
+      let alldivs = document.querySelectorAll("[name-X]");
+      let home = [...alldivs].filter(n => n.textContent == "E")[0];
+      drawPlayer(Number(home.getAttribute("name-X")),Number(home.getAttribute("name-Y")));
+      if (where == "M") maze(22,13,7,newBackground,mazeBackground);
+    }
+
+    function saveItems() {
+      if (!inPlace && !menuDisabled){
+        let map = exportMap(true);
+        map = map.slice(0,map.length-1);
+        localStorage.setItem("map",map);
+        if (prevTextContent != "M") visited.push([playerCoords[0],playerCoords[1]]);
+        localStorage.setItem("visited", JSON.stringify(visited));
+        localStorage.setItem("trip", JSON.stringify(trip));
+        save.textContent = "Saved!";
+        setTimeout(() => {save.textContent = "Save";},2000);
+      }
+    }
+    save.addEventListener("click",saveItems);
+
+    function shuffleMap() {
+      if (!menuDisabled && !inPlace && confirm("Are you sure? Progress will be deleted.")) {
+        trip = [];
+        shuffle.textContent = "Shuffled!";
+        setTimeout(() => {shuffle.textContent = "Shuffle"},2000);
+        visited = [];
+        let map = randomizeEvents(MAP,true);
+        let alldivs = document.querySelectorAll("[name-Y]");
+        let count = 0;
+        map = map.replace(/\n|\r/g, "");
+        MAP = map;
+        let drawnPlayer = false;
+        for (let div of alldivs) {
+          if (map.charAt(count)) div.textContent = map.charAt(count);
+          else div.textContent = "0";
+          if (div.textContent == "0") div.setAttribute("id","zero");
+          else if (div.textContent == "X" || div.textContent == "M") div.setAttribute("id","unit");
+          else if (div.textContent == "W") div.setAttribute("id","player");
+          else if (div.textContent == "H") {
+            div.setAttribute("id","player");
+            drawZero(playerCoords[0],playerCoords[1],true);
+            drawPlayer(Number(div.getAttribute("name-X")),Number(div.getAttribute("name-Y")));
+            prevTextContent = "H";
+            drawnPlayer = true;
+            hasHome = true;
+          }
+          count++;
+        }
+        if (!drawnPlayer) {
+          drawPlayer(playerCoords[0],playerCoords[1]);
+          prevTextContent = "H";
+          hasHome = true;
+        }
+      }
+    }
+    shuffle.addEventListener("click",shuffleMap);
+
+    function randomizeEvents(map,shuffled=false) {
+      let newMap = "";
+      if (/M/.test(map) && !shuffled) {
+        return map;
+      } else if (shuffled) {
+        map = map.replace(/M/g,"X");
+        map = map.replace(/W/g,"X");
+      }
+      for (let letter of map) {
+        if (letter == "X" && Math.random() < 0.05) {
+          newMap += "M";
+        } else newMap += letter;
+      }
+      return newMap;
+    }
+
+    function uploadMap() {
+      currentlyUploading = true;
+      visited = [];
+      if (currentlyCreating) createMap();
+      let binder = document.createElement("div");
+      binder.setAttribute("id","binder");
+
+      let selector = document.createElement("textarea");
+      selector.setAttribute("id","exportTextSelector");
+      selector.setAttribute("cols",43);
+      selector.setAttribute("rows",25);
+      selector.setAttribute("placeholder","Paste Map");
+
+      let doneButton = document.createElement("button");
+      doneButton.appendChild(document.createTextNode("Upload"));
+      doneButton.setAttribute("id","donebutton");
+      doneButton.addEventListener("click", () => {
+        currentlyUploading = false;
+        document.body.removeChild(binder);
+        if (confirm("Are you sure? Progress will be deleted.")) {
+          trip = [];
+          let alldivs = document.querySelectorAll("[name-Y]");
+          let count = 0;
+          let newMap = selector.value.replace(/\n|\r/g, "");
+          newMap = randomizeEvents(newMap);
+          MAP = newMap;
+          let drawnPlayer = false;
+          for (let div of alldivs) {
+            if (newMap.charAt(count)) div.textContent = newMap.charAt(count);
+            else div.textContent = "0";
+            if (div.textContent == "0") div.setAttribute("id","zero");
+            else if (div.textContent == "X" || div.textContent == "M") div.setAttribute("id","unit");
+            else if (div.textContent == "W") div.setAttribute("id","player");
+            else if (div.textContent == "H") {
+              div.setAttribute("id","player");
+              drawZero(playerCoords[0],playerCoords[1],true);
+              drawPlayer(Number(div.getAttribute("name-X")),Number(div.getAttribute("name-Y")));
+              prevTextContent = "H";
+              drawnPlayer = true;
+              hasHome = true;
+            }
+            count++;
+          }
+          if (!drawnPlayer) {
+            drawPlayer(playerCoords[0],playerCoords[1]);
+            prevTextContent = "H";
+            hasHome = true;
+          }
+        }
+      });
+
+      binder.appendChild(selector);
+      binder.appendChild(doneButton);
+      if (!currentlyExporting && !inPlace && !menuDisabled) document.body.appendChild(binder);
+    }
+    uploader.addEventListener("click", uploadMap);
+
+    function exportMap(onlyText=false) {
+      currentlyExporting = true;
+      if (currentlyCreating) createMap();
+      let count = 0;
+      let cols = 0;
+      let map = "";
+      while (true) {
+        let divs = document.querySelectorAll("[name-Y='"+count.toString()+"']");
+        if (divs.length == 0) break;
+        cols = divs.length;
+        for (let div of divs) {
+          map += div.textContent;
+        }
+        map += "\n";
+        count++;
+      }
+      if (onlyText == true) {
+        currentlyExporting = false;
+        return map.replace("@",prevTextContent);
+      }
+      let binder = document.createElement("div");
+      binder.setAttribute("id","binder");
+
+      let selector = document.createElement("textarea");
+      selector.setAttribute("id","exportTextSelector");
+      selector.textContent = map.replace("@",prevTextContent);
+      selector.setAttribute("cols",cols);
+      selector.setAttribute("rows",count-1);
+
+      let doneButton = document.createElement("button");
+      doneButton.appendChild(document.createTextNode("Done"));
+      doneButton.setAttribute("id","donebutton");
+      doneButton.addEventListener("click", () => {
+        currentlyExporting = false;
+        document.body.removeChild(binder);
+      });
+
+      binder.appendChild(selector);
+      binder.appendChild(doneButton);
+      if (!currentlyUploading && !inPlace && !menuDisabled) document.body.appendChild(binder);
+    }
+    exporter.addEventListener("click",exportMap);
+
+    function createMap() {
+      if (creator.textContent == "Create" && !inPlace && !menuDisabled && confirm("Are you sure? Map will be cleared.")) {
+        visited = [];
+        trip = [];
+        currentlyCreating = true;
+        creator.textContent = "Creating";
+        let alldivs = document.querySelectorAll("[name-X]");
+        for (let div of alldivs) {
+          div.textContent = "0";
+          div.setAttribute("id","zero");
+        }
+        if (hasHome) hasHome = false;
+        drawPlayer(playerCoords[0],playerCoords[1]);
+      } else if (creator.textContent == "Creating"){
+        creator.textContent = "Create";
+        currentlyCreating = false;
+        let alldivs = document.querySelectorAll("[name-X]");
+        let home = [...alldivs].filter(n => n.textContent == "H")[0];
+        if (home == undefined) {
+          home = document.querySelectorAll("[name-X='"+playerCoords[0].toString()+"'][name-Y='"+playerCoords[1].toString()+"']")[0];
+          home.textContent = "H";
+          prevTextContent = "H";
+          hasHome = true;
+        } else drawZero(playerCoords[0],playerCoords[1]);
+        drawPlayer(Number(home.getAttribute("name-X")),Number(home.getAttribute("name-Y")));
+        MAP = exportMap(true);
+      }
+    }
+    creator.addEventListener("click",createMap);
+
+    function createUnits(map,bg,addition=""){
+      let split = map.split("\n");
+      let countX = 0;
+      let countY = 0;
+      let divXtag = 0;
+      let divYtag = 0;
+      //let delayCounter = 0;
+      for (let line of split){
+        for (let element of line){
+          let newDiv = document.createElement("div");
+          //newDiv.setAttribute("id","zero");
+          newDiv.setAttribute("name-X"+addition,divXtag);
+          newDiv.setAttribute("name-Y"+addition,divYtag);
+          newDiv.appendChild(document.createTextNode(element));
+          if (newDiv.textContent == "0" || newDiv.textContent == "C" || newDiv.textContent == " ") newDiv.setAttribute("id","zero");
+          else if (newDiv.textContent == "O") newDiv.setAttribute("id","zero");
+          else if (newDiv.textContent == "H") newDiv.setAttribute("id","player");
+          else if (newDiv.textContent == "X") newDiv.setAttribute("id","unit");
+          else if (newDiv.textContent == "M") newDiv.setAttribute("id","unit");
+          else if (newDiv.textContent == "W") newDiv.setAttribute("id","player");
+          newDiv.style.width = bg.clientWidth/line.length;
+          newDiv.style.height = bg.clientHeight/split.length;
+          newDiv.style.left = countX;
+          newDiv.style.top = countY;
+          newDiv.addEventListener("click",() => {
+            if (currentlyCreating) {
+              if (newDiv.textContent == "H") hasHome = false;
+              newDiv.textContent = "0";
+              newDiv.setAttribute("id","zero");
+            }
+          });
+          countX += bg.clientWidth/line.length;
+          divXtag++;
+          //setTimeout(() => {background.appendChild(newDiv);}, 100+delayCounter);
+          //delayCounter += 100;
+          bg.appendChild(newDiv);
+        }
+        countY += bg.clientHeight/split.length;
+        divYtag ++;
+        countX = 0;
+        divXtag = 0;
+      }
+    }
+
+    function drawPlayer(x,y){
+      playerCoords[0] = x;
+      playerCoords[1] = y;
+      let posDiv = document.querySelectorAll("[name-X='"+x.toString()+"'][name-Y='"+y.toString()+"']")[0];
+      prevTextContent = posDiv.textContent;
+      testChest(posDiv);
+      posDiv.textContent = "@";
+      posDiv.setAttribute("id","player");
+    }
+
+    function drawZero(x,y,unit=false){
+      let posDiv = document.querySelectorAll("[name-X='"+x.toString()+"'][name-Y='"+y.toString()+"']")[0];
+      if (unit) {
+        posDiv.textContent = "X";
+        posDiv.setAttribute("id","unit");
+        return;
+      }
+      if (currentlyCreating) {
+        if (prevTextContent != "H") {
+          posDiv.textContent = "X";
+          posDiv.setAttribute("id","unit");
+        } else {
+          posDiv.textContent = "H";
+          posDiv.setAttribute("id","player");
+        }
+      } else {
+        posDiv.textContent = prevTextContent;
+        if (posDiv.textContent == "0" || posDiv.textContent == "O") posDiv.setAttribute("id","zero");
+        else if (posDiv.textContent == "X") {
+          posDiv.setAttribute("id","player");
+          visited.push([x,y]);
+        } else if (posDiv.textContent == "M") {
+          posDiv.textContent = "W";
+        }
+      }
+    }
+
+    function startUp() {
+      background.style.backgroundColor = document.body.style.backgroundColor;
+      background.style.left += menu.clientWidth;
+      background.style.width = document.body.clientWidth-menu.clientWidth;
+      background.style.height = document.body.clientHeight;
+      createUnits(MAP,background);
+      let alldivs = document.querySelectorAll("[name-X]");
+      let home = [...alldivs].filter(n => n.textContent == "H")[0];
+      if (home == undefined) {
+        home = document.querySelectorAll("[name-X='"+playerCoords[0].toString()+"'][name-Y='"+playerCoords[1].toString()+"']")[0];
+        home.textContent = "H";
+        prevTextContent = "H";
+        hasHome = true;
+      }
+      drawPlayer(Number(home.getAttribute("name-X")),Number(home.getAttribute("name-Y")));
+      if (visited.length > 1) {
+        for (let coords of visited) {
+          let divs = document.querySelectorAll("[name-X='"+coords[0].toString()+"'][name-Y='"+coords[1].toString()+"']")[0];
+          divs.setAttribute("id","player");
+        }
+      }
+    }
+    startUp();
+
+    window.addEventListener("keydown", event => {
+      if (event.key == "ArrowUp" && !immobile){
+        drawZero(playerCoords[0],playerCoords[1]);
+        try {
+          drawPlayer(playerCoords[0],playerCoords[1]-1);
+          if(!inPlace) miles+=0.034091;
+        } catch (e) {
+          try {
+            if (bagInv["walljumper"] > 0) {
+              drawPlayer(playerCoords[0],playerCoords[1]-1);
+              bagInv["walljumper"] -= 1;
+            } else {throw new Error("No walljumper");}
+          } catch (e) {
+            if (e.message == "No walljumper") drawPlayer(playerCoords[0],playerCoords[1]+1);
+            else drawPlayer(playerCoords[0],playerCoords[1]+2);
+          }
+        }
+        event.preventDefault();
+        if (prevTextContent == "H" && !inPlace) enter(testHomeMap,"H");
+        else if (prevTextContent == "M" && !inPlace) enter(testMissionMap,"M");
+        else if (prevTextContent == "E" && inPlace) leave(recentplace);
+        testEvent();
+      }
+      if (event.key == "ArrowDown" && !immobile){
+        drawZero(playerCoords[0],playerCoords[1]);
+        try {
+          drawPlayer(playerCoords[0],playerCoords[1]+1);
+          if(!inPlace) miles+=0.034091;
+        } catch (e) {
+          try {
+            if (bagInv["walljumper"] > 0) {
+              drawPlayer(playerCoords[0],playerCoords[1]+1);
+              bagInv["walljumper"] -= 1;
+            } else {throw new Error("No walljumper");}
+          } catch (e) {
+            if (e.message == "No walljumper") drawPlayer(playerCoords[0],playerCoords[1]-1);
+            else drawPlayer(playerCoords[0],playerCoords[1]-2);
+          }
+        }
+        event.preventDefault();
+        if (prevTextContent == "H" && !inPlace) enter(testHomeMap,"H");
+        else if (prevTextContent == "M" && !inPlace) enter(testMissionMap,"M");
+        else if (prevTextContent == "E" && inPlace) leave(recentplace);
+        testEvent();
+      }
+      if (event.key == "ArrowLeft" && !immobile){
+        drawZero(playerCoords[0],playerCoords[1]);
+        try {
+          drawPlayer(playerCoords[0]-1,playerCoords[1]);
+          if(!inPlace) miles+=0.030992;
+        } catch (e) {
+          try {
+            if (bagInv["walljumper"] > 0) {
+              drawPlayer(playerCoords[0]-1,playerCoords[1]);
+              bagInv["walljumper"] -= 1;
+            } else {throw new Error("No walljumper");}
+          } catch (e) {
+            if (e.message == "No walljumper") drawPlayer(playerCoords[0]+1,playerCoords[1]);
+            else drawPlayer(playerCoords[0]+2,playerCoords[1]);
+          }
+        }
+        event.preventDefault();
+        if (prevTextContent == "H" && !inPlace) enter(testHomeMap,"H");
+        else if (prevTextContent == "M" && !inPlace) enter(testMissionMap,"M");
+        else if (prevTextContent == "E" && inPlace) leave(recentplace);
+        testEvent();
+      }
+      if (event.key == "ArrowRight" && !immobile){
+        drawZero(playerCoords[0],playerCoords[1]);
+        try {
+          drawPlayer(playerCoords[0]+1,playerCoords[1]);
+          if(!inPlace) miles+=0.030992;
+        } catch (e) {
+          try {
+            if (bagInv["walljumper"] > 0) {
+              drawPlayer(playerCoords[0]+1,playerCoords[1]);
+              bagInv["walljumper"] -= 1;
+            } else {throw new Error("No walljumper");}
+          } catch(e) {
+            if (e.message == "No walljumper") drawPlayer(playerCoords[0]-1,playerCoords[1]);
+            else drawPlayer(playerCoords[0]-2,playerCoords[1]);
+          }
+        }
+        event.preventDefault();
+        if (prevTextContent == "H" && !inPlace) enter(testHomeMap,"H");
+        else if (prevTextContent == "M" && !inPlace) enter(testMissionMap,"M");
+        else if (prevTextContent == "E" && inPlace) leave(recentplace);
+        testEvent();
+      }
+      if (event.key == "Enter" && currentlyCreating && !hasHome){
+        prevTextContent = "H";
+        hasHome = true;
+      }
+    });
+
+
+  </script>
+</html>
