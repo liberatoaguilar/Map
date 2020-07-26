@@ -1,5 +1,7 @@
 # A Web-based Adventure Game!
 
+- Created June 2020
+
 ## Visit https://liberatoaguilar.github.io/Map/Map.html to Play!
 
 This (nameless) game is the start of a fun project in my quest to learn javascript. It is a simple game that takes inspiration from many other games that you may recognize when playing it.
